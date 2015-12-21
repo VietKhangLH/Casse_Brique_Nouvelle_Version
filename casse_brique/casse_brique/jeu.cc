@@ -40,7 +40,7 @@ void initParametresJeu()
     SDL_Init(SDL_INIT_VIDEO);
 }
 
-void boucleDeJeu(bool quit, Barre b1, SDL_Event event)
+void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
 {
     Clavier clavier;
     initClavier(clavier);
@@ -51,14 +51,17 @@ void boucleDeJeu(bool quit, Barre b1, SDL_Event event)
 
         actualiserEvenements(clavier, event);
 
-        bougerBarre(b1, clavier);
+        bougerBarre(barre, clavier);
+        afficherBarre(barre);
 
-        afficherBarre(b1);
+        mouvementsBalle(balle);
+        changementDirection(balle);
+
+        afficherBalle(balle);
 
         while(SDL_PollEvent(&event))
         {
             quit = (event.type == SDL_QUIT) || (event.type == SDL_MOUSEBUTTONDOWN);
-            std::cout << quit << std::endl;
         }
 
         SDL_Flip(SDL_GetVideoSurface());

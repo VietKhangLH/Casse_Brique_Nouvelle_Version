@@ -12,10 +12,13 @@ int main(int argc, char **argv)
 
     initParametresJeu(); // On initialise la fenetre de jeu + librairies SDL
 
-    Barre b1; // correspond à la "raquette" pour renvoyer la balle
-    initBarre(b1); // On place la barre du j1 par défaut
+    Barre barre; // correspond à la "raquette" pour renvoyer la balle
+    initBarre(barre); // On place la barre du j1 par défaut
 
-    boucleDeJeu(quit, b1, event); // boucle principale du jeu (contient while() )
+    Balle balle;
+    initBalle(balle);
+
+    boucleDeJeu(quit, barre, balle, event); // boucle principale du jeu (contient while() )
 
     SDL_Quit();
 

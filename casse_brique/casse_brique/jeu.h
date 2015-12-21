@@ -6,6 +6,6 @@
 void initParametresJeu();
 void initClavier(Clavier &clavier);
 void actualiserEvenements(Clavier &clavier, SDL_Event events);
-void boucleDeJeu(bool quit, Barre b1, SDL_Event event);
+void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event);
 
 #endif // JEU_H
