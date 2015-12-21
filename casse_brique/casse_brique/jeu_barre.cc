@@ -3,7 +3,7 @@
 #include "lib.h"
 #include "constantes.h"
 #include "fonctions.h"
-#define INIT_VITESSE_BARRE 10
+#define INIT_VITESSE_BARRE 15
 
 using namespace std;
 
@@ -43,6 +43,11 @@ void bougerBarre(Barre &barre, Clavier clavier)
             barre.mvt_gauche--;
         }
     }
+    else
+    {
+        barre.mvt_gauche = 0;
+    }
+
     if(barre.rectangle.x + barre.rectangle.w < SCREEN_WIDTH - 1)
     {
         if(clavier.touche[SDLK_RIGHT])
@@ -58,5 +63,9 @@ void bougerBarre(Barre &barre, Clavier clavier)
             barre.rectangle.x += barre.mvt_droite;
             barre.mvt_droite--;
         }
+    }
+    else
+    {
+        barre.mvt_droite = 0;
     }
 }
