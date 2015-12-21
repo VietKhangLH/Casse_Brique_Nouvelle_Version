@@ -21,6 +21,9 @@ void genererBrique(Brique brick)
 
             for (pix.x; pix.x < (brick.rectangle.x + brick.rectangle.w); pix.x++)
             {
+                if (pix.x % pix.w == 0)
+                    pix.y++;
+
                 SDL_FillRect(SDL_GetVideoSurface(), &pix, SDL_MapRGB(SDL_GetVideoSurface()->format,255,0,0));
             }
         break;
@@ -32,10 +35,15 @@ void genererBrique(Brique brick)
 
 void initBrick(Brique brick)
 {
-    brick.rectangle.x = 250;
-    brick.rectangle.y = 200;
+    brick.rectangle.x = SCREEN_WIDTH/2;
+    brick.rectangle.y = 50;
     brick.rectangle.w = 100;
-    brick.rectangle.h = 20;
+    brick.rectangle.h = 25;
 
     brick.vie = 1;
+}
+
+void afficherBrique(Brique brick)
+{
+    SDL_FillRect(SDL_GetVideoSurface(), &brick.rectangle, SDL_MapRGB(SDL_GetVideoSurface()->format,255,0,0));
 }

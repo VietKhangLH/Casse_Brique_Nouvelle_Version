@@ -19,9 +19,21 @@ struct Barre
     int vitesseMax; // la vitesse de pointe
 };
 
+struct Brique {
+    SDL_Rect rectangle; // correspond aux dimensions physique de la barre
+
+    int vie;
+    bool touche; // passe à true si touché
+};
+
 struct Clavier
 {
     bool touche[SDLK_LAST];
+};
+
+struct Chrono {
+    long int timeState;
+    bool timeIsPaused;
 };
 
 #endif // STRUCTURES

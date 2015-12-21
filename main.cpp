@@ -8,6 +8,8 @@ int main(int argc, char **argv)
 {
     bool quit = false;
 
+    srand(time(NULL));
+
     SDL_Event event;
 
     initParametresJeu(); // On initialise la fenetre de jeu + librairies SDL
@@ -18,7 +20,12 @@ int main(int argc, char **argv)
     Balle balle;
     initBalle(balle);
 
-    boucleDeJeu(quit, barre, balle, event); // boucle principale du jeu (contient while() )
+    Brique brick;
+    initBrick(brick);
+    Chrono chrono;
+    afficherChrono(chrono);
+
+    boucleDeJeu(quit, barre, balle, brick, event); // boucle principale du jeu (contient while() )
 
     SDL_Quit();
 

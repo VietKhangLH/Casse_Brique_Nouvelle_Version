@@ -6,7 +6,8 @@
 void initParametresJeu();
 void initClavier(Clavier &clavier);
 void actualiserEvenements(Clavier &clavier, SDL_Event events);
-void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event);
+void boucleDeJeu(bool quit, Barre barre, Balle balle, Brique brick, SDL_Event event);
 bool collision(SDL_Rect a, SDL_Rect b);
+int alea(int mini, int maxi);
 
 #endif // JEU_H
