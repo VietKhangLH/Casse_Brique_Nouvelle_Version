@@ -68,4 +68,10 @@ void bougerBarre(Barre &barre, Clavier clavier)
     {
         barre.mvt_droite = 0;
     }
+
+    if(clavier.touche[SDLK_RIGHT] && clavier.touche[SDLK_LEFT])
+    {
+        barre.mvt_droite = 0;
+        barre.mvt_gauche = 0;
+    }
 }
