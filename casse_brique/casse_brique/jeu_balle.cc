@@ -26,15 +26,14 @@ void mouvementsBalle(Balle &balle)
     balle.rectangle.y += balle.mvt_Y;
 }
 
-void changementDirection(Balle &balle)
+void changementDirection(Balle &balle, Barre barre)
 {
     if(balle.rectangle.x < 0 || balle.rectangle.x + balle.rectangle.w > SCREEN_WIDTH)
     {
         balle.mvt_X *= -1;
     }
-    if(balle.rectangle.y < 0 || balle.rectangle.y + balle.rectangle.h > SCREEN_HEIGHT)
+    if(balle.rectangle.y < 0 || balle.rectangle.y + balle.rectangle.h > SCREEN_HEIGHT || collision(barre.rectangle, balle.rectangle))
     {
         balle.mvt_Y *= -1;
     }
-
 }

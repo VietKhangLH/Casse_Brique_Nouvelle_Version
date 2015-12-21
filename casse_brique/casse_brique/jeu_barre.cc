@@ -11,7 +11,7 @@ using namespace std;
 void initBarre(Barre &barre)
 {
     barre.rectangle.x = (SCREEN_WIDTH - LG_BARRE) /2;
-    barre.rectangle.y = (SCREEN_HEIGHT * 98) / 100;
+    barre.rectangle.y = (SCREEN_HEIGHT * 95) / 100;
     barre.rectangle.w = LG_BARRE;
     barre.rectangle.h = EP_BARRE;
     barre.vitesseMax = INIT_VITESSE_BARRE;

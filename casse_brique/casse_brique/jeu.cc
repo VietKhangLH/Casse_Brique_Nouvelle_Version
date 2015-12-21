@@ -40,6 +40,11 @@ void initParametresJeu()
     SDL_Init(SDL_INIT_VIDEO);
 }
 
+bool collision(SDL_Rect a, SDL_Rect b)
+{
+    return a.x < b.x + b.w && a.x + a.w > b.x && a.y + a .h > b.y && a.y < b.y + b.h;
+}
+
 void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
 {
     Clavier clavier;
@@ -55,7 +60,7 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
         afficherBarre(barre);
 
         mouvementsBalle(balle);
-        changementDirection(balle);
+        changementDirection(balle, barre);
 
         afficherBalle(balle);
 
@@ -65,8 +70,8 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
         }
 
         SDL_Flip(SDL_GetVideoSurface());
-        SDL_Delay(10);
 
+        SDL_Delay(15);
 
     } while(!quit);
 }
