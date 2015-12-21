@@ -19,14 +19,14 @@ void actualiserEvenements(Clavier &clavier, SDL_Event events)
     {
         switch(events.type)
         {
-            case SDL_KEYDOWN:
-                clavier.touche[events.key.keysym.sym] = true;
-                break;
-            case SDL_KEYUP:
-                clavier.touche[events.key.keysym.sym] = false;
-                break;
-            default:
-                break;
+        case SDL_KEYDOWN:
+            clavier.touche[events.key.keysym.sym] = true;
+            break;
+        case SDL_KEYUP:
+            clavier.touche[events.key.keysym.sym] = false;
+            break;
+        default:
+            break;
         }
     }
 }
@@ -42,7 +42,7 @@ void initParametresJeu()
 
 bool collision(SDL_Rect a, SDL_Rect b)
 {
-    return a.x + a.w > b.x && a.x < b.x + b.w && a.y + a.h > b.y && a.y < b.y + b.h;
+    return a.x < b.x + b.w && a.x + a.w > b.x && a.y + a .h > b.y && a.y < b.y + b.h;
 }
 
 void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
@@ -64,9 +64,14 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
 
         afficherBalle(balle);
 
+        Brique brick;
+        initBrick(brick);
+        genererBrique(brick);
+
         while(SDL_PollEvent(&event))
         {
-            quit = (event.type == SDL_QUIT) || (event.type == SDL_MOUSEBUTTONDOWN);
+            if ((event.type == SDL_QUIT) || (event.type == SDL_MOUSEBUTTONDOWN))
+                quit = true;
         }
 
         SDL_Flip(SDL_GetVideoSurface());
