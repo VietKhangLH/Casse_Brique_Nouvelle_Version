@@ -10,7 +10,7 @@ struct Brique {
     bool touche; // passe à true si touché
 };
 
-void initBrick(Brique brick);
+void initBrick(Brique &brick);
 void genererBrique(Brique brick);
 
 #endif // JEU_BRIQUE_H

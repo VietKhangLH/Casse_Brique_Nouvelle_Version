@@ -50,6 +50,9 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
     Clavier clavier;
     initClavier(clavier);
 
+    Brique brick;
+    initBrick(brick);
+
     do
     {
         SDL_FillRect(SDL_GetVideoSurface(), &SDL_GetVideoSurface()->clip_rect, SDL_MapRGB(SDL_GetVideoSurface()->format, 255, 255, 255));
@@ -64,8 +67,6 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
 
         afficherBalle(balle);
 
-        Brique brick;
-        initBrick(brick);
         genererBrique(brick);
 
         while(SDL_PollEvent(&event))

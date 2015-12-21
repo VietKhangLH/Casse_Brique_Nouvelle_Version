@@ -13,24 +13,15 @@ void genererBrique(Brique brick)
     switch (brick.vie) // selon le nombre de fois qu'il faudras touché la brique
     {
         case 1:
-        SDL_Rect pix; // correspond au pixel qu'on va faire varier et remplir au fur et a mesure
-            pix.x = brick.rectangle.x;
-            pix.y = brick.rectangle.y;
-            pix.w = L_PIXEL; // longueur du pixel
-            pix.h = H_PIXEL; // hauteur du pixel
+            SDL_FillRect(SDL_GetVideoSurface(), &brick.rectangle, SDL_MapRGB(SDL_GetVideoSurface()->format, 255, 0, 0));
+            break;
 
-            for (pix.x; pix.x < (brick.rectangle.x + brick.rectangle.w); pix.x++)
-            {
-                SDL_FillRect(SDL_GetVideoSurface(), &pix, SDL_MapRGB(SDL_GetVideoSurface()->format,255,0,0));
-            }
-        break;
-
-    default:
-        break;
+        default:
+            break;
     }
 }
 
-void initBrick(Brique brick)
+void initBrick(Brique &brick)
 {
     brick.rectangle.x = 250;
     brick.rectangle.y = 200;
