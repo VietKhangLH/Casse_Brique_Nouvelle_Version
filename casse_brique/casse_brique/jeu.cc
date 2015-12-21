@@ -42,7 +42,7 @@ void initParametresJeu()
 
 bool collision(SDL_Rect a, SDL_Rect b)
 {
-    return a.x < b.x + b.w && a.x + a.w > b.x && a.y + a .h > b.y && a.y < b.y + b.h;
+    return a.x + a.w > b.x && a.x < b.x + b.w && a.y + a.h > b.y && a.y < b.y + b.h;
 }
 
 void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
