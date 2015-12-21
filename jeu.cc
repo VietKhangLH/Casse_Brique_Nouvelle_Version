@@ -55,7 +55,12 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, Brique brick, SDL_Event ev
     Clavier clavier;
     initClavier(clavier);
 
+<<<<<<< HEAD
     Chrono chrono;
+=======
+    Brique brick;
+    initBrick(brick);
+>>>>>>> 91696dc6f8deed7bd2cbc58a553dde517329cfc4
 
     do
     {
@@ -72,7 +77,11 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, Brique brick, SDL_Event ev
         afficherBalle(balle);
         afficherBrique(brick);
 
+<<<<<<< HEAD
         SDL_Flip(SDL_GetVideoSurface());
+=======
+        genererBrique(brick);
+>>>>>>> 91696dc6f8deed7bd2cbc58a553dde517329cfc4
 
         while(SDL_PollEvent(&event))
         {
