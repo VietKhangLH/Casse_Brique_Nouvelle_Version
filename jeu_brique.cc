@@ -16,22 +16,10 @@ void genererBrique(Brique brick)
             SDL_FillRect(SDL_GetVideoSurface(), &brick.rectangle, SDL_MapRGB(SDL_GetVideoSurface()->format, 255, 0, 0));
             break;
 
-<<<<<<< HEAD
-            for (pix.x; pix.x < (brick.rectangle.x + brick.rectangle.w); pix.x++)
-            {
-                if (pix.x % pix.w == 0)
-                    pix.y++;
-
-                SDL_FillRect(SDL_GetVideoSurface(), &pix, SDL_MapRGB(SDL_GetVideoSurface()->format,255,0,0));
-            }
-        break;
-
-    default:
-        break;
-=======
         default:
             break;
->>>>>>> 91696dc6f8deed7bd2cbc58a553dde517329cfc4
+
+
     }
 }
 

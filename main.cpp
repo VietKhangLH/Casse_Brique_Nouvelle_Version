@@ -21,9 +21,6 @@ int main(int argc, char **argv)
     initBalle(balle);
 
     Brique brick;
-    initBrick(brick);
-    Chrono chrono;
-    afficherChrono(chrono);
 
     boucleDeJeu(quit, barre, balle, brick, event); // boucle principale du jeu (contient while() )
 
