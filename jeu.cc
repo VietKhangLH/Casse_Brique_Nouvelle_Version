@@ -50,8 +50,14 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
     Clavier clavier;
     initClavier(clavier);
 
+
+    int nbLignes = (SCREEN_HEIGHT / 2) / 5;
+    int nbColonnes = (SCREEN_WIDTH / 6) % 6;
+
     Brique brick;
     initBrick(brick);
+
+
 
     do
     {

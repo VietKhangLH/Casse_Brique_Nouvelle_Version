@@ -10,15 +10,7 @@ using namespace std;
 
 void genererBrique(Brique brick)
 {
-    switch (brick.vie) // selon le nombre de fois qu'il faudras touché la brique
-    {
-        case 1:
-            SDL_FillRect(SDL_GetVideoSurface(), &brick.rectangle, SDL_MapRGB(SDL_GetVideoSurface()->format, 255, 0, 0));
-            break;
 
-        default:
-            break;
-    }
 }
 
 void initBrick(Brique &brick)

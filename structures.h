@@ -3,6 +3,8 @@
 
 #include "lib.h"
 
+
+
 struct Balle
 {
     SDL_Rect rectangle;
@@ -22,6 +24,13 @@ struct Barre
 struct Clavier
 {
     bool touche[SDLK_LAST];
+};
+
+struct Brique
+{
+    SDL_Rect rectangle; // correspond aux dimensions physique de la barre
+
+    int vie;
 };
 
 #endif // STRUCTURES
