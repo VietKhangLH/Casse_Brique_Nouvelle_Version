@@ -6,5 +6,6 @@
 #include "jeu_balle.h"
 #include "jeu_barre.h"
 #include "jeu_brique.h"
+#include "jeu_chrono.h"
 
 #endif // FONCTIONS

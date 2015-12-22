@@ -13,11 +13,11 @@ void afficherBalle(Balle balle)
 void initBalle(Balle &balle)
 {
     balle.rectangle.w = 10;
-    balle.rectangle.h = 10;
+    balle.rectangle.h = 10 ;
     balle.rectangle.x = (SCREEN_WIDTH - balle.rectangle.w) / 2;
     balle.rectangle.y = (SCREEN_HEIGHT - balle.rectangle.h) / 2;
-    balle.mvt_X = 5;
-    balle.mvt_Y = 5;
+    balle.mvt_X = alea(-5, 5);
+    balle.mvt_Y = alea(-5, 5);
 }
 
 void mouvementsBalle(Balle &balle)

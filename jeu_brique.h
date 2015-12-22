@@ -5,6 +5,8 @@
 
 
 void initBrick(Brique &brick);
+
 void genererBrique(Brique brick);
+void afficherBrique(Brique brick);
 
 #endif // JEU_BRIQUE_H

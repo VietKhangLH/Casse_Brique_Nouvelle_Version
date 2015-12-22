@@ -5,6 +5,11 @@
 
 using namespace std;
 
+int alea(int mini, int maxi)
+{
+    return (rand() % (++maxi - mini))  + mini;
+}
+
 void initClavier(Clavier &clavier)
 {
     for(int i = 0 ; i < SDLK_LAST ; i++)
@@ -45,17 +50,13 @@ bool collision(SDL_Rect a, SDL_Rect b)
     return a.x < b.x + b.w && a.x + a.w > b.x && a.y + a .h > b.y && a.y < b.y + b.h;
 }
 
-void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
+void boucleDeJeu(bool quit, Barre barre, Balle balle, Brique brick, SDL_Event event)
 {
     Clavier clavier;
     initClavier(clavier);
 
 
-    int nbLignes = (SCREEN_HEIGHT / 2) / 5;
-    int nbColonnes = (SCREEN_WIDTH / 6) % 6;
-
-    Brique brick;
-    initBrick(brick);
+    Chrono chrono;
 
 
 
@@ -72,20 +73,27 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, SDL_Event event)
         changementDirection(balle, barre);
 
         afficherBalle(balle);
+        afficherBrique(brick);
+
+        SDL_Flip(SDL_GetVideoSurface());
 
         genererBrique(brick);
+
 
         while(SDL_PollEvent(&event))
         {
             if ((event.type == SDL_QUIT) || (event.type == SDL_MOUSEBUTTONDOWN))
                 quit = true;
+
         }
 
-        SDL_Flip(SDL_GetVideoSurface());
 
         SDL_Delay(15);
 
-    } while(!quit);
+    }while(!quit);
 }
+
+// void niveauxCasseBrique()
+
 
 

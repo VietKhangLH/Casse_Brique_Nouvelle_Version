@@ -9,7 +9,8 @@ SOURCES += \
     jeu_balle.cc \
     jeu_barre.cc \
     jeu_brique.cc \
-    main.cpp
+    main.cpp \
+    jeu_chrono.cc
 
 OTHER_FILES +=
 
@@ -22,7 +23,8 @@ HEADERS += \
     jeu_barre.h \
     jeu_brique.h \
     lib.h \
-    structures.h
+    structures.h \
+    jeu_chrono.h
 
 LIBS+=`sdl-config --libs` -lSDL_image -lSDL_ttf
 INCLUDEPATH+=-I/usr/include/SDL/

@@ -9,5 +9,6 @@
 #include <SDL/SDL_ttf.h>
 #include <SDL/SDL_getenv.h>
 #include <sstream>
+#include <ctime>
 
 #endif // LIBS
