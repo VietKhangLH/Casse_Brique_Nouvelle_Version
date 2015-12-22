@@ -47,10 +47,10 @@ void bougerBarre(Barre &barre, Clavier clavier)
         {
             barre.rectangle.x -= barre.mvt_gauche;
             barre.mvt_gauche--;
-        }
-        else
-        {
-            barre.mvt_gauche = 0;
+            if(clavier.touche[SDLK_RIGHT])
+            {
+                barre.mvt_gauche = 0;
+            }
         }
     }
     else
@@ -72,10 +72,10 @@ void bougerBarre(Barre &barre, Clavier clavier)
         {
             barre.rectangle.x += barre.mvt_droite;
             barre.mvt_droite--;
-        }
-        else
-        {
-            barre.mvt_droite = 0;
+            if(clavier.touche[SDLK_LEFT])
+            {
+                barre.mvt_droite = 0;
+            }
         }
     }
     else

@@ -10,4 +10,5 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, Brique brick, SDL_Event ev
 bool collision(SDL_Rect a, SDL_Rect b);
 int alea(int mini, int maxi);
 
+void boucleEditor(SDL_Event event);
 #endif // JEU_H

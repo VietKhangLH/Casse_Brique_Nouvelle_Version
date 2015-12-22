@@ -56,10 +56,7 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, Brique brick, SDL_Event ev
     initClavier(clavier);
 
 
-    Chrono chrono;
-
-
-
+   // Chrono chrono;
     do
     {
         SDL_FillRect(SDL_GetVideoSurface(), &SDL_GetVideoSurface()->clip_rect, SDL_MapRGB(SDL_GetVideoSurface()->format, 255, 255, 255));
@@ -95,5 +92,24 @@ void boucleDeJeu(bool quit, Barre barre, Balle balle, Brique brick, SDL_Event ev
 
 // void niveauxCasseBrique()
 
+
+void boucleEditor(SDL_Event event)
+{
+    Clavier clavier;
+    initClavier(clavier);
+    int aPlacer = 5;
+
+    do
+    {
+        SDL_FillRect(SDL_GetVideoSurface(), &SDL_GetVideoSurface()->clip_rect, SDL_MapRGB(SDL_GetVideoSurface()->format, 255, 255, 255));
+
+        actualiserEvenements(clavier, event);
+
+        SDL_Flip(SDL_GetVideoSurface());
+
+        SDL_Delay(15);
+
+    } while(event.type != SDL_QUIT);
+}
 
 

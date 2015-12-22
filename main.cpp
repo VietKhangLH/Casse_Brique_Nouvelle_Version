@@ -7,7 +7,6 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    bool quit = false;
 
     srand(time(NULL));
 
@@ -21,9 +20,11 @@ int main(int argc, char **argv)
     Balle balle;
     initBalle(balle);
 
-    Brique brick;
+   // Brique brick;
 
-    boucleDeJeu(quit, barre, balle, brick, event); // boucle principale du jeu (contient while() )
+   // boucleDeJeu(quit, barre, balle, brick, event); // boucle principale du jeu (contient while() )
+
+    boucleEditor(event);
 
     SDL_Quit();
 
